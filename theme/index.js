@@ -4,7 +4,7 @@
 
 import _ from 'lodash';
 
-import designSystem from '../../source/design-system';
+import designSystem from '../source/design-system';
 
 require('./scss/_drupal-styles.scss');
 

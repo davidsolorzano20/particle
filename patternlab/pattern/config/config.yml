@@ -19,7 +19,7 @@ patternStates:
 styleGuideExcludes: ''
 cacheBusterOn: 'true'
 exportDir: export
-publicDir: ../../public/patternlab/
+publicDir: ../../public/demo/
 sourceDir: ../../source/
 defaultPattern: protons-welcome
 defaultShowPatternInfo: false
@@ -62,10 +62,10 @@ plugins:
           - ../../source/_patterns/01-atoms/badge
           - ../../source/_patterns/01-atoms/image
           - ../../source/_patterns/01-atoms/button
-          - ../../source/_patterns/01-atoms/dropdown
           - ../../source/_patterns/01-atoms/branding
-          - ../../source/_patterns/01-atoms/list-group
+          - ../../source/_patterns/01-atoms/dropdown
           - ../../source/_patterns/01-atoms/breadcrumb
+          - ../../source/_patterns/01-atoms/list-group
       molecules:
         paths:
           - ../../source/_patterns/02-molecules

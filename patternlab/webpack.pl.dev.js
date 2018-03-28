@@ -21,7 +21,7 @@ const dev = {
     contentBase: path.resolve(PATH_PUBLIC),
     watchContentBase: true,
     open: true,
-    openPage: 'patternlab',
+    openPage: 'demo',
     hot: true,
     historyApiFallback: true,
     inline: true,
