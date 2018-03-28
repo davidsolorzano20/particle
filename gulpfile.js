@@ -1,7 +1,3 @@
-/**
- * Gulp tasks for non-webpack concerns
- * The following tasks do rote work that isn't covered in webpack asset bundling
- */
 const path = require('path');
 const fs = require('fs');
 const gulp = require('gulp');
@@ -11,14 +7,14 @@ const {
   PATH_DRUPAL,
   PATH_GRAV,
   PATH_SOURCE,
-  PATH_DIST,
+  PATH_PUBLIC,
 } = require('./config');
 
 /**
  * Pattern Lab raw compile function.
  */
 // Config: Path to Pattern Lab installation.
-const plPath = path.resolve(__dirname, PATH_PL, 'pattern-lab');
+const plPath = path.resolve(__dirname, PATH_PL, 'pattern');
 // PL compilation function, loaded up with the the PL path
 const plCompile = require('./tools/tasks/pl-compile')(plPath);
 
@@ -40,9 +36,9 @@ gulp.task('compile:twig-namespaces', () => gulp
     outputs: [
       {
         // Note: PL will NOT compile unless the namespaces are explicitly declared
-        configFile: path.join(PATH_PL, 'pattern-lab/config/config.yml'),
+        configFile: path.join(PATH_PL, 'pattern/config/config.yml'),
         atKey: 'plugins.twigNamespaces.namespaces',
-        pathRelativeToDir: path.join(PATH_PL, 'pattern-lab/'),
+        pathRelativeToDir: path.join(PATH_PL, 'pattern/'),
       },
       {
         // The component-libraries module wants to know about our namespaces
@@ -93,7 +89,7 @@ gulp.task('compile:twig-namespaces', () => gulp
  */
 gulp.task('compile:pl:notify', (cb) => {
   // Write to dist/ root a file named CHANGED.txt, casts Date to text, calls callback
-  fs.writeFile(path.resolve(__dirname, PATH_DIST, 'CHANGED.txt'), +new Date(), cb);
+  fs.writeFile(path.resolve(__dirname, PATH_PUBLIC, 'CHANGED.txt'), +new Date(), cb);
 });
 
 /**
